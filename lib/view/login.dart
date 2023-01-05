@@ -1,7 +1,5 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:therapy/Api/api_service.dart';
 import 'package:therapy/Helper/colors.dart';
 import 'package:therapy/Helper/session.dart';
@@ -132,7 +130,7 @@ class _LoginState extends State<Login> {
   //   }
   // }
 
-  Future<SendOtpModel?> sendOtp() async {
+  Future<SendOtpModel?> sendOtp(context) async {
     var request = http.MultipartRequest('POST', Uri.parse('$sendOtpUrl'));
     request.fields.addAll({
       'mobile': mobileController.text.toString(),
@@ -154,7 +152,7 @@ class _LoginState extends State<Login> {
       });
       print("checking result here ${results.message} and ${results.status}");
       if(results.status == true){
-        Fluttertoast.showToast(msg:"${results.message}");
+        setSnackbar("${results.message}", context);
          Navigator.push(context, MaterialPageRoute(builder: (context)=> Verification(
            mobile: mobileController.text.toString(),
            otp: otp.toString(),
@@ -162,14 +160,13 @@ class _LoginState extends State<Login> {
 
       } else {
         setSnackbar("${results.message}", context);
-        Fluttertoast.showToast(msg:"Invalid Mobile Number!");
       }
 
 
       return SendOtpModel.fromJson(json.decode(str));
     }
     else {
-      Fluttertoast.showToast(msg:"Invalid Mobile Number!");
+      setSnackbar("Invalid Mobile Number!", context);
       return null;
     }
   }
@@ -258,7 +255,7 @@ class _LoginState extends State<Login> {
                     title: "Send Authentication Code",
                     onPress: () {
                       // Navigator.push(context, (MaterialPageRoute(builder: (context) => Verification())));
-                     sendOtp();
+                     sendOtp(context);
                     },
                     height: 50,
                     width: MediaQuery.of(context).size.width,

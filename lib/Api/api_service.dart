@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:therapy/Helper/widgets.dart';
 import 'package:therapy/Model/send_otp_model.dart';
 
 import '../Helper/string.dart';
@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService{
 
-  Future<SendOtpModel?> sendOtp(String mobile) async {
+  Future<SendOtpModel?> sendOtp(String mobile, context) async {
     var request = http.MultipartRequest('POST', Uri.parse('$sendOtpUrl'));
     request.fields.addAll({
       'mobile': '$mobile',
@@ -24,9 +24,11 @@ class ApiService{
       final str = await response.stream.bytesToString();
       var results = SendOtpModel.fromJson(json.decode(str));
       if(results.status == true){
-        Fluttertoast.showToast(msg:"${results.message}");
+        setSnackbar("${results.message}", context);
+       
       }else{
-        Fluttertoast.showToast(msg:"${results.message}");
+        setSnackbar("${results.message}", context);
+       
       }
       print("checking result here ${results.message}");
       String? msg;

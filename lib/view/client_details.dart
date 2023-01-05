@@ -58,7 +58,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                subTitleText("Patient's Name*", context, 12),
+                                subTitleText("Client's Name*", context, 12),
                                 titleText("John Wick", context, 12),
                               ],
                             ),
@@ -182,12 +182,12 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 decoration: BoxDecoration(
                                     color: Theme.of(context).colorScheme.simmerBase,
                                     borderRadius: BorderRadius.circular(10)),
-                                child: const Center(
+                                child:  Center(
                                     child: Text(
                                       "Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the and typesetting industry . Lorem Ipsum Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy and typesetting industry . Lorem Ipsum industry's standard dummy when an unknown printer",
                                       maxLines: 6,
                                       style: TextStyle(
-                                          color: colors.subTxtClr,
+                                          color: Theme.of(context).colorScheme.fontColor,
                                           fontSize: 12,
                                           height: 2),
                                     ))),

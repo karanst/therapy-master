@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pinput/pinput.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:therapy/Helper/colors.dart';
@@ -36,7 +35,7 @@ class _VerificationState extends State<Verification> {
     focusNode.dispose();
     super.dispose();
   }
-  Future<VerifyOtpModel?> verifyOtp() async {
+  Future<VerifyOtpModel?> verifyOtp(context) async {
     var request = http.MultipartRequest('POST', Uri.parse('$verifyOtpUrl'));
     request.fields.addAll({
       'mobile': '${widget.mobile}',
@@ -64,8 +63,7 @@ class _VerificationState extends State<Verification> {
         SharedPreferences preferences = await SharedPreferences.getInstance();
         await preferences.setString('token', token.toString());
         print("checking result here ${results.message}");
-
-        Fluttertoast.showToast(msg:"${results.message}");
+        setSnackbar("${results.message}", context);
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
             BottomBar()));
         // Navigator.push(context, MaterialPageRoute(builder: (context)=> Verification(
@@ -79,7 +77,8 @@ class _VerificationState extends State<Verification> {
         setState((){
           msg = results.message;
         });
-        Fluttertoast.showToast(msg:"${results.message}");
+        setSnackbar("${results.message}", context);
+        // Fluttertoast.showToast(msg:"${results.message}");
       }
 
 
@@ -216,10 +215,10 @@ class _VerificationState extends State<Verification> {
 
 
                     if(widget.otp == pinController.text.toString()){
-                         verifyOtp();
+                         verifyOtp(context);
 
                     }else{
-                      verifyOtp();
+                      verifyOtp(context);
                     }
 
                   },

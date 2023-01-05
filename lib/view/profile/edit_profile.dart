@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:therapy/Helper/colors.dart';
 import 'package:therapy/Helper/string.dart';
@@ -23,7 +22,7 @@ class _EditProfileState extends State<EditProfile> {
   TextEditingController emailController = TextEditingController();
   TextEditingController aboutController = TextEditingController();
 
-  updateProfile() async{
+  updateProfile(context) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
     var headers = {
@@ -45,7 +44,7 @@ class _EditProfileState extends State<EditProfile> {
     print("this is response ${response.statusCode.toString()}");
 
     if (response.statusCode == 200) {
-      Fluttertoast.showToast(msg: "Profile updated successfully!");
+      setSnackbar("Profile updated successfully!", context);
       print(await response.stream.bytesToString());
     }
     else {
@@ -306,7 +305,7 @@ class _EditProfileState extends State<EditProfile> {
                 title: "Submit",
                 // icon: Icons.edit,
                 onPress: (){
-                  updateProfile();
+                  updateProfile(context);
                   // Navigator.push(context, MaterialPageRoute(builder: (context)=>
                   //     BottomBar()));
                 },

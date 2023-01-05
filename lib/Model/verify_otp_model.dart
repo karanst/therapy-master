@@ -11,7 +11,6 @@ class VerifyOtpModel {
     _message = message;
     _accessToken = accessToken;
 }
-
   VerifyOtpModel.fromJson(dynamic json) {
     _status = json['status'];
     _message = json['message'];
@@ -20,7 +19,7 @@ class VerifyOtpModel {
   bool? _status;
   String? _message;
   String? _accessToken;
-VerifyOtpModel copyWith({  bool? status,
+  VerifyOtpModel copyWith({  bool? status,
   String? message,
   String? accessToken,
 }) => VerifyOtpModel(  status: status ?? _status,
