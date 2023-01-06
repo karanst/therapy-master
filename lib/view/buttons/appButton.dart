@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:therapy/Helper/colors.dart';
 
@@ -25,7 +27,7 @@ class AppBtn extends StatelessWidget {
           children: [
             Text('$title',
     style: TextStyle(
-      fontSize: fSize,
+      fontSize: Platform.isAndroid ? fSize : fSize,
       fontWeight: FontWeight.w500,
       color: Theme.of(context).colorScheme.lightWhite,
     ),),

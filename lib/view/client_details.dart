@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:therapy/Helper/colors.dart';
 import 'package:therapy/Helper/widgets.dart';
@@ -184,11 +186,11 @@ class _ClientDetailsState extends State<ClientDetails> {
                                     borderRadius: BorderRadius.circular(10)),
                                 child:  Center(
                                     child: Text(
-                                      "Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the and typesetting industry . Lorem Ipsum Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy and typesetting industry . Lorem Ipsum industry's standard dummy when an unknown printer",
+                                      "Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the and typesetting industry . Lorem Ipsum Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply dummy text of the Lorem Ipsum is simply",
                                       maxLines: 6,
                                       style: TextStyle(
                                           color: Theme.of(context).colorScheme.fontColor,
-                                          fontSize: 12,
+                                          fontSize: Platform.isAndroid ?  13 : 15,
                                           height: 2),
                                     ))),
                             widget.show ==  true ?

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:therapy/Helper/colors.dart';
 import 'package:therapy/Helper/widgets.dart';
@@ -33,12 +35,12 @@ Widget availabilityCard(context, model, i, bool show) {
                         model[i]['name'],
                         style:  TextStyle(
                           color: Theme.of(context).colorScheme.fontColor,
-                            fontSize: 14, fontWeight: FontWeight.bold),
+                            fontSize: Platform.isAndroid ? 14 : 16, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
                       Text(model[i]['date'],
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: Platform.isAndroid ? 14 : 16,
                         color: Theme.of(context).colorScheme.fontClr,
                       ),),
                     ],
@@ -324,12 +326,17 @@ Widget supportedCard(context, model, i, bool show, bool isSupported) {
                       model[i]['name'],
                       style:  TextStyle(
                         color: Theme.of(context).colorScheme.fontColor,
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                          fontSize: Platform.isAndroid ?
+                          16
+                          : 17, fontWeight: FontWeight.bold),
                     ),
                    const SizedBox(height: 8,),
                     show ?
                     Text(model[i]['date'],
                     style: TextStyle(
+                      fontSize: Platform.isAndroid ?
+                        16
+                        : 17,
                       color: Theme.of(context).colorScheme.fontColor
                     ),)
                     : const SizedBox.shrink(),

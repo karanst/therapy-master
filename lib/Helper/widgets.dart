@@ -4,8 +4,9 @@ import 'package:therapy/Helper/colors.dart';
 
 Text titleText(String data, context, double fSize){
   return Text(data,
+  textAlign: TextAlign.center,
   style: TextStyle(
-    fontSize: Platform.isAndroid ? fSize: fSize*1.2,
+    fontSize: Platform.isAndroid ? fSize: fSize*1.3,
     fontWeight: FontWeight.w600,
     color: Theme.of(context).colorScheme.fontColor,
   ),);
@@ -14,7 +15,7 @@ Text titleText(String data, context, double fSize){
 Text titleTextNormal(String data, context, double fSize){
   return Text(data,
     style: TextStyle(
-      fontSize: Platform.isAndroid ? fSize: fSize*1.2,
+      fontSize: Platform.isAndroid ? fSize: fSize*1.3,
       fontWeight: FontWeight.normal,
       color: Theme.of(context).colorScheme.fontColor,
     ),);
@@ -23,7 +24,7 @@ Text subTitleText(String data, context, double fSize){
   return Text(data,
     textAlign: TextAlign.center,
     style: TextStyle(
-      fontSize: Platform.isAndroid ? fSize: fSize*1.2,
+      fontSize: Platform.isAndroid ? fSize: fSize*1.3,
       fontWeight: FontWeight.normal,
       color: Theme.of(context).colorScheme.fontClr,
     ),);
@@ -31,7 +32,7 @@ Text subTitleText(String data, context, double fSize){
 Text secTitleText(String data, context, double size ){
   return Text(data,
     style:  TextStyle(
-      fontSize: Platform.isAndroid ? size: size*1.2,
+      fontSize: Platform.isAndroid ? size: size*1.3,
       fontWeight: FontWeight.bold,
       color: Theme.of(context).colorScheme.secColor
       //Theme.of(context).colorScheme.fontColor,
@@ -47,7 +48,7 @@ Widget textBtn( onPress, context){
 Text themeTitleText(String data, context, double size ){
   return Text(data,
     style:  TextStyle(
-        fontSize:  Platform.isAndroid ? size: size*1.2,
+        fontSize:  Platform.isAndroid ? size: size*1.3,
         fontWeight: FontWeight.bold,
         color: colors.primary
       //Theme.of(context).colorScheme.fontColor,

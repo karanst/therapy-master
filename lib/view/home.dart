@@ -285,7 +285,7 @@ class _HomeState extends State<Home> {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(
-                  top: 25
+                  top: 28
              // circleRadius / 2.0
               ),
               child:  Container(
@@ -300,15 +300,16 @@ class _HomeState extends State<Home> {
                     )
                   ],
                 ),
-                padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
+                padding: const EdgeInsets.only(left: 10, right: 5, bottom: 10),
                 height: 120,
                 width: MediaQuery.of(context).size.width/2.4,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     titleTextNormal("02", context, 28),
-                   const SizedBox(height: 10,),
-                    titleText("People I've Supported", context, 12,)
+                   const SizedBox(height: 5,),
+                    Container(
+                        child: titleText("People I've Supported", context, 12,))
                   ],
                 ),
               ),
@@ -350,7 +351,7 @@ class _HomeState extends State<Home> {
                     // circleRadius / 2.0
                   ),
                   child:  Container(
-                    padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
+                    padding: const EdgeInsets.only(left: 10, right: 5, bottom: 10),
                     height: 120,
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.lightWhite,
@@ -369,7 +370,7 @@ class _HomeState extends State<Home> {
                       children: [
 
                         titleTextNormal("02", context, 28),
-                        const SizedBox(height: 10,),
+                        const SizedBox(height: 5,),
                         titleText("People I Support", context, 12)
                       ],
                     ),
@@ -429,7 +430,7 @@ class _HomeState extends State<Home> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        secTitleText("Availability Feature", context, 18),
+        secTitleText("Availability Feature", context, 16),
         const SizedBox(height: 15,),
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
