@@ -45,7 +45,7 @@ class GetStarted extends StatelessWidget {
                   ],
                 ),
               ),
-              titleText("Lorem Ipsum simply", context, 26),
+              titleText("Lorem Ipsum simply", context, 22),
               const SizedBox(height: 20,),
               Padding(
                 padding: const EdgeInsets.only(left: 40.0, right: 40),

@@ -35,7 +35,7 @@ class _LeaderboardState extends State<Leaderboard> {
               });
             },
             child: Container(
-              height: 30,
+              height: 35,
               width: 100,
               decoration: BoxDecoration(
                   color: _currentIndex == 0 ? colors.primary : Theme.of(context).colorScheme.lightWhite,
@@ -47,7 +47,8 @@ class _LeaderboardState extends State<Leaderboard> {
                       color: _currentIndex == 0
                           ? colors.whit
                           : Theme.of(context).colorScheme.fontClr,
-                      fontSize: 14),
+                      fontSize: 16,
+                  fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -59,7 +60,7 @@ class _LeaderboardState extends State<Leaderboard> {
               });
             },
             child: Container(
-              height: 30,
+              height: 35,
               width: 100,
               decoration: BoxDecoration(
                   color: _currentIndex == 1 ? colors.primary : Theme.of(context).colorScheme.lightWhite,
@@ -71,7 +72,8 @@ class _LeaderboardState extends State<Leaderboard> {
                       color: _currentIndex == 1
                           ? colors.whit
                           : Theme.of(context).colorScheme.fontClr,
-                      fontSize: 14),
+                      fontSize: 16,
+                  fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -83,7 +85,7 @@ class _LeaderboardState extends State<Leaderboard> {
               });
             },
             child: Container(
-              height: 30,
+              height: 35,
               width: 100,
               decoration: BoxDecoration(
                   color: _currentIndex == 2 ? colors.primary :  Theme.of(context).colorScheme.lightWhite,
@@ -95,7 +97,8 @@ class _LeaderboardState extends State<Leaderboard> {
                       color: _currentIndex == 2
                           ? colors.whit
                           : Theme.of(context).colorScheme.fontClr,
-                      fontSize: 14),
+                      fontSize: 16,
+                  fontWeight: FontWeight.w600),
                 ),
               ),
             ),

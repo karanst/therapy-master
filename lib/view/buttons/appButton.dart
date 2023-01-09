@@ -27,7 +27,8 @@ class AppBtn extends StatelessWidget {
           children: [
             Text('$title',
     style: TextStyle(
-      fontSize: Platform.isAndroid ? fSize : fSize,
+      fontSize: 18,
+      //fSize ,
       fontWeight: FontWeight.w500,
       color: Theme.of(context).colorScheme.lightWhite,
     ),),

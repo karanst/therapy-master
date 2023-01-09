@@ -28,7 +28,11 @@ AppBar customAppBar(title, context){
   return AppBar(
     elevation: 0,
     backgroundColor: colors.primary,
-    title: Text(title!),
+    title: Text(title!,
+    style: const TextStyle(
+      fontSize: 20,
+      fontWeight: FontWeight.bold
+    ),),
     centerTitle: true,
     leading: IconButton(
       onPressed: (){

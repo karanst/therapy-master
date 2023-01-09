@@ -206,6 +206,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                                 title: "Add Session Details",
                                 width: MediaQuery.of(context).size.width,
                                 height: 45,
+                                fSize: 18,
                               ),
                             )
                             : const SizedBox.shrink(),
@@ -222,6 +223,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                                     title: "Add Schedule",
                                     width: MediaQuery.of(context).size.width/2.5,
                                     height: 45,
+                                    fSize: 18,
                                   ),
                                   AppBtn(
                                     onPress: (){
@@ -230,6 +232,7 @@ class _ClientDetailsState extends State<ClientDetails> {
                                     title: "View Schedule",
                                     width: MediaQuery.of(context).size.width/2.5,
                                     height: 45,
+                                    fSize: 18,
                                   )
                                 ],
                               ),

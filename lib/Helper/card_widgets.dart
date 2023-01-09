@@ -119,13 +119,13 @@ Widget leaderCard(context, model, i, rank, coins) {
                       model[i]['name'],
                       style:  TextStyle(
                           color: Theme.of(context).colorScheme.fontColor,
-                          fontSize: 14, fontWeight: FontWeight.w600),
+                          fontSize: 16, fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 5,),
                     Text(
                       model[i]['level'],
                       style:  TextStyle(
-                          fontSize: 10,
+                          fontSize: 14,
                           color: Theme.of(context).colorScheme.fontColor,
                           fontWeight: FontWeight.w500),
                     ),
@@ -146,7 +146,10 @@ Widget leaderCard(context, model, i, rank, coins) {
                 children: [
                   Text(
                     "${coins.toString()} ",
-                    style: const TextStyle(),
+                    style: const TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600
+                    ),
                   ),
                   Image.asset(
                     'assets/images/coin.png',
@@ -263,7 +266,7 @@ Widget profileCard(context, double height, String label, content, iconImage) {
                   Text(
                     label,
                     style:  TextStyle(
-                        fontWeight: FontWeight.w900, fontSize: 14,color: Theme.of(context).colorScheme.fontColor),
+                        fontWeight: FontWeight.w900, fontSize: 16, color: Theme.of(context).colorScheme.fontColor),
                   ),
                   const SizedBox(
                     height: 5,
@@ -276,7 +279,7 @@ Widget profileCard(context, double height, String label, content, iconImage) {
                       style:  TextStyle(
                           color: Theme.of(context).colorScheme.fontClr,
                           fontWeight: FontWeight.w400,
-                          fontSize: 12),
+                          fontSize: 14),
                     ),
                   )
                 ],
@@ -421,13 +424,15 @@ Widget invoiceCard(context, model, i, bool show, Color color, status) {
                   Text(
                     model[i]['name'],
                     style:  TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.w900,
+                        fontSize: 17, fontWeight: FontWeight.w900,
                         color: Theme.of(context).colorScheme.fontColor),
                   ),
                   const SizedBox(height: 5,),
                   show ?
                   Text(model[i]['date']
-                  ,style: TextStyle(color: Theme.of(context).colorScheme.fontClr),)
+                  ,style: TextStyle(
+                      fontSize: 15,
+                        color: Theme.of(context).colorScheme.fontClr),)
                       : const SizedBox.shrink(),
                 ],
               ),
@@ -437,7 +442,7 @@ Widget invoiceCard(context, model, i, bool show, Color color, status) {
           Container(
             // alignment: Alignment.centerRight,
             padding: const EdgeInsets.only(left: 20, right: 20),
-            height: 25,
+            height: 35,
             // width: 70,
             decoration: BoxDecoration(
                 color: color,
@@ -445,7 +450,8 @@ Widget invoiceCard(context, model, i, bool show, Color color, status) {
             child: Center(
               child: Text(
                 status,
-                style: const TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white,
+                fontWeight: FontWeight.w600),
               ),
             ),
           )
@@ -790,7 +796,8 @@ Widget availableCardWidget(context, model, i) {
                   children: [
                      Text(
                       "Time",
-                      style: TextStyle(fontWeight: FontWeight.w500,
+                      style: TextStyle(fontWeight: FontWeight.w600,
+                      fontSize: 14,
                       color: Theme.of(context).colorScheme.fontColor),
                     ),
                     const SizedBox(height: 5,),
@@ -801,7 +808,8 @@ Widget availableCardWidget(context, model, i) {
                   children: [
                      Text(
                       "Date",
-                      style: TextStyle(fontWeight: FontWeight.w500,
+                      style: TextStyle(fontWeight: FontWeight.w600,
+                          fontSize: 14,
                           color: Theme.of(context).colorScheme.fontColor),
                     ),
                     const SizedBox(height: 5,),
@@ -817,7 +825,7 @@ Widget availableCardWidget(context, model, i) {
                       color:model[i]['status'] == 'Available' ? colors.primary: colors.red,
                       borderRadius: BorderRadius.circular(25)
                   ),
-                  child: Text(model[i]['status'],style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 15),),
+                  child: Text(model[i]['status'],style: const TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 15),),
                 ),
               ],
             ),

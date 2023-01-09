@@ -35,7 +35,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
               });
             },
             child: Container(
-              height: 30,
+              height: 35,
               width: 100,
               decoration: BoxDecoration(
                   color: _currentIndex == 0 ? colors.green : Theme.of(context).colorScheme.gray,
@@ -48,7 +48,8 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                           ? colors.whit
                           : colors.fntClr,
                       //Theme.of(context).colorScheme.lightWhite,
-                      fontSize: 14),
+                      fontSize: 16,
+                  fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -60,7 +61,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
               });
             },
             child: Container(
-              height: 30,
+              height: 35,
               width: 100,
               decoration: BoxDecoration(
                   color: _currentIndex == 1 ? colors.primary :  Theme.of(context).colorScheme.gray,
@@ -72,7 +73,8 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                       color: _currentIndex == 1
                           ? colors.whit
                           : colors.fntClr,
-                      fontSize: 14),
+                      fontSize: 16,
+                  fontWeight: FontWeight.w600),
                 ),
               ),
             ),
@@ -84,7 +86,7 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
               });
             },
             child: Container(
-              height: 30,
+              height: 35,
               width: 100,
               decoration: BoxDecoration(
                   color: _currentIndex == 2 ? colors.red :  Theme.of(context).colorScheme.gray,
@@ -96,7 +98,8 @@ class _InvoiceHistoryState extends State<InvoiceHistory> {
                       color: _currentIndex == 2
                           ? colors.whit
                           : colors.fntClr,
-                      fontSize: 14),
+                      fontSize: 16,
+                  fontWeight: FontWeight.w600),
                 ),
               ),
             ),

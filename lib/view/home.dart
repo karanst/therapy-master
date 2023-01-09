@@ -302,7 +302,7 @@ class _HomeState extends State<Home> {
                 ),
                 padding: const EdgeInsets.only(left: 10, right: 5, bottom: 10),
                 height: 120,
-                width: MediaQuery.of(context).size.width/2.4,
+                // width: MediaQuery.of(context).size.width/2.4,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -483,11 +483,13 @@ class _HomeState extends State<Home> {
 
   }
 
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     getProfile();
+
   }
 
   @override
@@ -546,7 +548,7 @@ class _HomeState extends State<Home> {
                 drawerItem('assets/icons/drawer1.png', "Availability", (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> Availability()));
                 }),
-                drawerItem('assets/icons/drawer2.png', "Invoice", (){
+                drawerItem('assets/icons/drawer2.png', "Invoice & Payments", (){
                   Navigator.push(context, MaterialPageRoute(builder: (context)=> InvoiceHistory()));
                 }),
                 drawerItem('assets/icons/drawer4.png', "Outlook", (){
@@ -574,75 +576,75 @@ class _HomeState extends State<Home> {
       ),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(80),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 10.0),
-          child: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.lightWhite,
-            leading: InkWell(
+        child: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.lightWhite,
+          leading: InkWell(
+            onTap: (){
+
+              _scaffoldKey.currentState!.openDrawer();
+
+              },
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15.0, top: 8, bottom: 8),
+              child: Container(
+                  padding: const EdgeInsets.all(10),
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: colors.secondary),
+                    color: colors.whit
+                ),
+                child: const ImageIcon(
+                  AssetImage('assets/icons/drawericon.png',),
+                  color: colors.secondary
+                )
+                // Icon(Icons.menu_outlined, color: appColorWhite,),
+              ),
+            ),
+          ),
+          // backgroundColor: colors.whit,
+          // shape: const RoundedRectangleBorder(
+          //     borderRadius: BorderRadius.only(
+          //         bottomLeft: Radius.circular(20),
+          //         bottomRight: Radius.circular(20)
+          //     )
+          // ),
+          elevation: 0,
+          title: Padding(
+            padding: const EdgeInsets.only(top: 4.0),
+            child: Container(
+              height: 50,
+                width: 150,
+                child: Image.asset('assets/icons/appIcon.png')),
+          ),
+          centerTitle: true,
+          actions: [
+            InkWell(
               onTap: (){
-
-                _scaffoldKey.currentState!.openDrawer();
-
-                },
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Notifications()));
+                // _scaffoldKey.currentState!.openDrawer();
+              },
               child: Padding(
-                padding: const EdgeInsets.only(left: 15.0, top: 8, bottom: 8),
+                padding: const EdgeInsets.only(right: 8.0, top: 8, bottom: 8),
                 child: Container(
-                    padding: const EdgeInsets.all(10),
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: colors.secondary),
-                      color: colors.whit
-                  ),
-                  child: const ImageIcon(
-                    AssetImage('assets/icons/drawericon.png',),
-                    color: colors.secondary
-                  )
+                    padding: const EdgeInsets.all(7),
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: colors.secondary),
+                        color: colors.whit
+                    ),
+                    child:  const Icon(
+                        Icons.notifications,
+                        color: colors.secondary)
                   // Icon(Icons.menu_outlined, color: appColorWhite,),
                 ),
               ),
             ),
-            // backgroundColor: colors.whit,
-            // shape: const RoundedRectangleBorder(
-            //     borderRadius: BorderRadius.only(
-            //         bottomLeft: Radius.circular(20),
-            //         bottomRight: Radius.circular(20)
-            //     )
-            // ),
-            elevation: 0,
-            title: Container(
-              height: 120,
-                width: 150,
-                child: Image.asset('assets/icons/appIcon.png')),
-            centerTitle: true,
-            actions: [
-              InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Notifications()));
-                  // _scaffoldKey.currentState!.openDrawer();
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 8.0, top: 8, bottom: 8),
-                  child: Container(
-                      padding: const EdgeInsets.all(7),
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: colors.secondary),
-                          color: colors.whit
-                      ),
-                      child:  const Icon(
-                          Icons.notifications,
-                          color: colors.secondary)
-                    // Icon(Icons.menu_outlined, color: appColorWhite,),
-                  ),
-                ),
-              ),
-              Container(width: 10),
-            ],
-          ),
+            Container(width: 10),
+          ],
         ),
       ),
       body: SingleChildScrollView(

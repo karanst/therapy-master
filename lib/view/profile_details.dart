@@ -75,7 +75,7 @@ class ProfileDetails extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                subTitleText("Patient's Name*", context, 12),
+                                subTitleText("Client Name*", context, 12),
                                 titleText("John Wick", context, 12),
                               ],
                             ),

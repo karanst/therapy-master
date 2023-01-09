@@ -51,7 +51,7 @@ class InvoiceDetails extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        titleText("Patient Name", context, 12),
+                        titleText("Client Name", context, 12),
                         titleText("John Wick", context, 12),
                       ],
                     ),
@@ -165,7 +165,7 @@ class InvoiceDetails extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 25.0, bottom: 20),
-              child: titleText("Therapy Duration", context, 20),
+              child: titleText("Therapy Duration", context, 16),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -200,7 +200,7 @@ class InvoiceDetails extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 30.0, bottom: 20),
-              child: titleText("Therapy Charge", context, 20),
+              child: titleText("Therapy Charge", context, 16),
             ),
 
             Padding(

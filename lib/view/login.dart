@@ -215,7 +215,7 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 const SizedBox(height: 30,),
-                titleText("Login Now", context, 26),
+                titleText("Login Now", context, 22),
                 const SizedBox(height: 10,),
                 subTitleText("Please enter the details below to continue", context, 14),
                 Padding(
